@@ -1,4 +1,12 @@
-export function colorHelper() {
+export function RfColorHelper() {
+  this.colorToObject = function (color) {
+    if(typeof color !== 'string') {
+      return color
+    }
+    console.debug(color)
+    return this.getValueCollection(color)
+
+  }
   const parseHex = function(hex) {
     return parseInt(hex, 16);
   };
@@ -38,8 +46,8 @@ export function colorHelper() {
     return this;
   };
   this.rgbToHex = function(color) {
-    this.color = color;
-
+    this.color = this.colorToObject(color);
+    console.debug(this.color, 'hat')
     if (typeof this.color.red !== "undefined") {
       this.color = `#${toHex(this.color.red)}${toHex(this.color.green)}${toHex(
         this.color.blue
@@ -53,8 +61,7 @@ export function colorHelper() {
   };
 
   this.rgbToHsl = function(color) {
-    this.color = color;
-
+    this.color = this.colorToObject(color);
     const rgbArray = [
       this.color.red / 255,
       this.color.green / 255,
@@ -107,7 +114,7 @@ export function colorHelper() {
   };
 
   this.hslToRgb = function(color) {
-    this.color = color;
+    this.color = this.colorToObject(color);
     const light = this.color.light / 100;
     const sat = this.color.saturation / 100;
     const hue = this.color.hue / 360;
@@ -195,18 +202,18 @@ export function colorHelper() {
     if (typeof this.color === "object") {
       return this.color;
     } else if (this.color.indexOf("rgb(") > -1) {
-      let colorValues = this.color.split(")")[0].split(",");
+      let colorValues = this.color.split("(")[1].split(" ");
 
       return {
-        red: colorValues[0],
-        green: colorValues[1],
-        blue: colorValues[2]
+        red: parseInt(colorValues[0]),
+        green: parseInt(colorValues[1]),
+        blue: parseInt(colorValues[2])
       };
     } else if (this.color.indexOf("hsl(") > -1) {
       const colorValues = this.color
         .split("(")[1]
-        .split(")")[0]
-        .split(",");
+        .split(" ");
+
       return {
         hue: parseInt(colorValues[0]),
         saturation: parseInt(colorValues[1]),

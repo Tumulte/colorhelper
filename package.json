@@ -1,15 +1,21 @@
 {
-  "name": "@rf/colorhelper",
+  "name": "@rougefw/colorhelper",
   "version": "1.0.0",
   "description": "converts common css color format into any other as object or string",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "color",
     "conversion"
   ],
   "author": "Tumulte",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.4",
+    "jest": "^27.4.4"
+  }
 }
