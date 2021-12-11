@@ -1,6 +1,6 @@
 {
   "name": "@rougefw/colorhelper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "converts common css color format into any other as object or string",
   "main": "index.js",
   "scripts": {
