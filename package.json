@@ -11,11 +11,19 @@
     "color",
     "conversion"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tumulte/colorhelper.git"
+  },
   "author": "Tumulte",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
     "babel-jest": "^27.4.4",
     "jest": "^27.4.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Tumulte/colorhelper/issues"
+  },
+  "homepage": "https://github.com/Tumulte/colorhelper#readme"
 }

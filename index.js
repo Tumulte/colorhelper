@@ -3,7 +3,6 @@ export function RfColorHelper() {
     if(typeof color !== 'string') {
       return color
     }
-    console.debug(color)
     return this.getValueCollection(color)
 
   }
@@ -47,7 +46,6 @@ export function RfColorHelper() {
   };
   this.rgbToHex = function(color) {
     this.color = this.colorToObject(color);
-    console.debug(this.color, 'hat')
     if (typeof this.color.red !== "undefined") {
       this.color = `#${toHex(this.color.red)}${toHex(this.color.green)}${toHex(
         this.color.blue
