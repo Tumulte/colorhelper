@@ -1,11 +1,11 @@
 {
-  "name": "@rougefw/colorhelper",
-  "version": "1.2.0",
+  "name": "@picaro/colorhelper",
+  "version": "1.0.0",
   "description": "converts common css color format into any other as object or string",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "vitest",
+    "test:watch": "vitest --watch"
   },
   "keywords": [
     "color",
@@ -18,12 +18,13 @@
   "author": "Tumulte",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.16.4",
-    "babel-jest": "^27.4.4",
-    "jest": "^27.4.4"
+    "@babel/preset-typescript": "^7.18.6",
+    "vitest": "^0.10.0"
   },
   "bugs": {
     "url": "https://github.com/Tumulte/colorhelper/issues"
   },
-  "homepage": "https://github.com/Tumulte/colorhelper#readme"
+  "homepage": "https://github.com/Tumult/colorhelper#readme"
 }
